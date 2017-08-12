@@ -4,18 +4,16 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Graphic extends JPanel {
 
 	JGraf graf = new JGraf();
-
-	public Component addGraph() {
-		return graf.graph(this);
-	}
-
 	@Override
 	protected void paintComponent(Graphics g2) {
+		
+		graf.graph(this);
 
 		super.paintComponent(g2);
 		setBackground(Color.BLACK);
