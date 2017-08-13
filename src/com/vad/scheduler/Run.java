@@ -1,7 +1,5 @@
 package com.vad.scheduler;
 
-import java.awt.Color;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -14,10 +12,10 @@ public class Run {
 		frame = new JFrame("Scheduler");
 		
 		JPanel panelx = new JPanel();
-		graf.graph(panelx);				
+		
+		graf.graph(frame);
 
 		frame.setSize(400, 400);
-		frame.add(panelx);
 		frame.setVisible(true);
 		frame.setLocation(400, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
