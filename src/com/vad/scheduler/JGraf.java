@@ -3,6 +3,7 @@ package com.vad.scheduler;
 
 import java.awt.Component;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -23,6 +24,13 @@ public class JGraf {
 		graph.getModel().endUpdate();
 
 		mxGraphComponent graphComponent = new mxGraphComponent(graph);
+		ImageIcon icon = new ImageIcon("img/a1.jpg");
+		graphComponent.setBackgroundImage(icon);
+		
+		
+		
+		
+		
 		return panelx.add(graphComponent);
 		}	  
 
