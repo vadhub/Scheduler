@@ -10,15 +10,19 @@ import javax.swing.JPanel;
 
 public class Run {
 	static JFrame frame = new JFrame("Scheduler");
-	static JGraf graf = new JGraf();
+	static JGraf graf = new JGraf();	
+	static JButton addObj = new JButton("Add");
+	static JButton delete = new JButton("Delete");
 
 	public static void main(String[] args) {
 
-		JPanel panelx = new JPanel();
-
-		JButton addObj = new JButton("Add");
-		JButton delete = new JButton("Delete");
-
+		JPanel panelx = new JPanel();	
+		
+		
+		ButtonListener btnListener = new ButtonListener();
+		
+		addObj.addActionListener(btnListener);
+		
 		panelx.setLayout(new BoxLayout(panelx, BoxLayout.Y_AXIS));
 
 		panelx.add(addObj);
@@ -29,8 +33,9 @@ public class Run {
 		frame.setLayout(new BorderLayout());
 
 		frame.add("West", panelx);
-
+		
 		graf.graph(frame);
+		
 		frame.setSize(400, 400);
 		frame.setVisible(true);
 		frame.setLocation(400, 400);

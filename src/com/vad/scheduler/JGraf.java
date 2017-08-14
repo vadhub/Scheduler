@@ -22,6 +22,7 @@ public class JGraf{
 		graph.getModel().endUpdate();
 
 		mxGraphComponent graphComponent = new mxGraphComponent(graph);
+		
 		ImageIcon icon = new ImageIcon("img/a1.jpg");
 		graphComponent.setBackgroundImage(icon);
 
