@@ -15,22 +15,22 @@ public class Run {
 	public static void main(String[] args) {
 
 		JPanel panelx = new JPanel();
-		
+
 		JButton addObj = new JButton("Add");
 		JButton delete = new JButton("Delete");
-		
+
 		panelx.setLayout(new BoxLayout(panelx, BoxLayout.Y_AXIS));
-		
+
 		panelx.add(addObj);
 		panelx.add(delete);
-		
+
 		panelx.setBackground(Color.blue);
 
-		graf.graph(frame);
-		
 		frame.setLayout(new BorderLayout());
-		
-		frame.add("West",panelx);
+
+		frame.add("West", panelx);
+
+		graf.graph(frame);
 		frame.setSize(400, 400);
 		frame.setVisible(true);
 		frame.setLocation(400, 400);
