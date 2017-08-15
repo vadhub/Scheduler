@@ -4,16 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-
-import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
 
 public class ButtonListener implements ActionListener {
 
 	Object objects;
 	mxGraph graph = new mxGraph();
-	Object parent = graph.getDefaultParent();
-	mxGraphComponent graphComponent;	
+	Object parent = graph.getDefaultParent();		
 	ImageIcon icon = new ImageIcon("img/a1.jpg");	
 	
 	@Override
@@ -27,8 +24,7 @@ public class ButtonListener implements ActionListener {
 			System.out.println("f");
 
 			graph.getModel().endUpdate();
-			graphComponent = new mxGraphComponent(graph);
-			graphComponent.setBackgroundImage(icon);
+			
 		}
 	}	
 }

@@ -34,7 +34,7 @@ public class Run {
 
 		frame.add("West", panelx);
 		
-		graf.graph(frame);
+		graf.graph(frame,addObj,delete);
 		
 		frame.setSize(400, 400);
 		frame.setVisible(true);
