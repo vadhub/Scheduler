@@ -25,6 +25,8 @@ public class Run {
 		addObj.addActionListener(btnListener);
 
 		panelx.setLayout(new BoxLayout(panelx, BoxLayout.Y_AXIS));
+		
+		panelx.setBounds(34, 34, 70,100);
 
 		panelx.add(addObj);
 		panelx.add(delete);
@@ -33,7 +35,7 @@ public class Run {
 
 		frame.setLayout(new BorderLayout());
 
-		frame.add("West", panelx);
+		frame.add(panelx);
 
 		graf.graph(frame, addObj, delete);
 
