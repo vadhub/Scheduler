@@ -8,6 +8,9 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class Run {
@@ -19,23 +22,35 @@ public class Run {
 	public static void main(String[] args) {
 
 		JPanel panelx = new JPanel();
+		JPanel panelMenu = new JPanel();
+		
+		JMenuBar menuBar = new JMenuBar();
+		JMenu menu = new JMenu("Window");
+		JMenuItem mitem = new JMenuItem("Tools");
 
 		ButtonListener btnListener = new ButtonListener();
 
 		addObj.addActionListener(btnListener);
 
 		panelx.setLayout(new BoxLayout(panelx, BoxLayout.Y_AXIS));
+		panelMenu.setLayout(new BoxLayout(panelMenu, BoxLayout.X_AXIS));
 		
-		panelx.setBounds(34, 34, 70,100);
+		panelMenu.add(menuBar);
+
+		menuBar.add(menu);
+		menu.add(mitem);	
+
+		panelx.setBounds(34, 34, 70, 100);
 
 		panelx.add(addObj);
 		panelx.add(delete);
 
-		panelx.setBackground(Color.blue);
+		panelx.setBackground(Color.LIGHT_GRAY);
 
 		frame.setLayout(new BorderLayout());
 
 		frame.add(panelx);
+		frame.add("North", panelMenu);
 
 		graf.graph(frame, addObj, delete);
 
