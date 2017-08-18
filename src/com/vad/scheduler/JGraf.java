@@ -23,7 +23,7 @@ public class JGraf{
 		btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				v = graph.insertVertex(parent, null, "DoubleClic", 20, 20, 80, 30);
+				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80, 30);
 			}
 		});	
 		

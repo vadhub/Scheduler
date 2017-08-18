@@ -5,8 +5,8 @@ import java.awt.Color;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -15,28 +15,35 @@ import javax.swing.JPanel;
 public class Run {
 	static JFrame frame = new JFrame("Scheduler");
 	static JGraf graf = new JGraf();
+
 	static JButton addObj = new JButton("Add");
 	static JButton delete = new JButton("Delete");
 
-	public static void main(String[] args) {
+	static JLabel close = new JLabel("X");
 
-		JPanel panelx = new JPanel();
-		JPanel panelMenu = new JPanel();
-		
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("Window");
-		JMenuItem mitem = new JMenuItem("Tools");		
+	static JPanel panelx = new JPanel();
+	static JPanel panelMenu = new JPanel();
+
+	static JMenuBar menuBar = new JMenuBar();
+	static JMenu menu = new JMenu("Window");
+	static JMenuItem mitem = new JMenuItem("Tools");
+
+	public static void main(String[] args) {
 
 		panelx.setLayout(new BoxLayout(panelx, BoxLayout.Y_AXIS));
 		panelMenu.setLayout(new BoxLayout(panelMenu, BoxLayout.X_AXIS));
-		
+
+		ActionList.Action(close, panelx);
+		ActionList.ActionObj(mitem, panelx);
+
 		panelMenu.add(menuBar);
 
 		menuBar.add(menu);
-		menu.add(mitem);	
+		menu.add(mitem);
 
 		panelx.setBounds(34, 34, 70, 100);
 
+		panelx.add(close);
 		panelx.add(addObj);
 		panelx.add(delete);
 
@@ -57,7 +64,5 @@ public class Run {
 		JComponentDragging.belegeFlaechenMitListener(panelx);
 
 	}
-
-	
 
 }
