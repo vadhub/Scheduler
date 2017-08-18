@@ -11,10 +11,10 @@ import javax.swing.JFrame;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
 
-public class JGraf{
+public class JGraf {
 	static Object v;
-	
-	public Component graph(JFrame frame, JButton btn,JButton btn2) {		
+
+	public Component graph(JFrame frame, JButton btn, JButton btn2) {
 
 		mxGraph graph = new mxGraph();
 		Object parent = graph.getDefaultParent();
@@ -23,18 +23,18 @@ public class JGraf{
 		btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80, 30);
-			}
-		});	
-		
-		btn2.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				 graph.removeCells(new Object[]{v});				
+				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80,
+						30);
 			}
 		});
-		
+
+		btn2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				graph.removeCells(new Object[] { v });
+			}
+		});
 
 		graph.insertEdge(parent, null, "", v, parent);
 
