@@ -12,11 +12,14 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class Run {
+	
+
 	static JFrame frame = new JFrame("Scheduler");
 	static JGraf graf = new JGraf();
 
 	static JButton addObj = new JButton("Add");
 	static JButton delete = new JButton("Delete");
+	static JButton save = new JButton("Save");
 
 	static JPanel panelx = new JPanel();
 	static JPanel panelMenu = new JPanel();
@@ -34,7 +37,9 @@ public class Run {
 		mainPanel.setLayout(new BorderLayout());
 
 		ActionList.ActionObj(mitem, panelx);
-
+		
+		ActionList.ScreenShot(save, frame);
+		
 		panelMenu.add(menuBar);
 
 		menuBar.add(menu);
@@ -42,6 +47,7 @@ public class Run {
 
 		panelx.add(addObj);
 		panelx.add(delete);
+		panelx.add(save);
 
 		mainPanel.add("North", panelMenu);
 		mainPanel.add("South", panelx);
