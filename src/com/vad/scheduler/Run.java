@@ -37,14 +37,16 @@ public class Run {
 
 		mainPanel.setLayout(new BorderLayout());
 
-		ActionList.ActionObj(mitem, panelx);
-		
+		ActionList.ActionObj(mitem, panelx);		
 		ActionList.ScreenShot(save, frame);
+		ActionList.ChnageStyleEdge(mitemE);
+		
 		
 		panelMenu.add(menuBar);
 
 		menuBar.add(menu);
 		menu.add(mitem);
+		menu.add(mitemE);
 
 		panelx.add(addObj);
 		panelx.add(delete);

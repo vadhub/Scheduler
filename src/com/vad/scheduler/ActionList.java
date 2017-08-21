@@ -7,8 +7,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.Map;
-
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,11 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import com.mxgraph.util.mxConstants;
-import com.mxgraph.view.mxEdgeStyle;
-
 public class ActionList {
-	static JGraf graf = new JGraf();
 	public static void Action(JLabel close, JPanel panel) {
 
 		close.addMouseListener(new MouseAdapter() {
@@ -45,15 +39,16 @@ public class ActionList {
 
 	}
 
-	public void ChnageStyleEdge(JMenuItem item) {
+	static public void ChnageStyleEdge(JMenuItem item) {
 
-		 item.addActionListener(new ActionListener() {
-		
-		 @Override
-		 public void actionPerformed(ActionEvent e) {
-			 graf.EdgeStyle();
-		 }
-		 });
+		item.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JGraf.c = true;
+				System.out.println("j");
+			}
+		});
 	}
 
 	// button screenshot frame image

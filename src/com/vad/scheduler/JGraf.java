@@ -16,27 +16,32 @@ import com.mxgraph.view.mxGraph;
 
 public class JGraf {
 	static Object v;
-	
-	mxGraph graph = new mxGraph();
+
+	static mxGraph graph = new mxGraph();
+	static boolean c = false;
 
 	public Component graph(JFrame frame, JButton btn, JButton btn2) {
 
-		
 		Object parent = graph.getDefaultParent();
-		graph.getModel().beginUpdate();	
-
+		graph.getModel().beginUpdate();
+		if(c==true){		
+		JGraf.EdgeStyle();
+		}else{
+			System.out.println("It's ok");
+		}
 
 		btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80, 30);		
-			
+				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80,
+						30);
+
 			}
 		});
 
 		btn2.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {
 				graph.removeCells();
 			}
 		});
@@ -52,10 +57,14 @@ public class JGraf {
 
 		return frame.add(graphComponent);
 	}
-	
-	public void EdgeStyle(){
+
+	static public Map<String, Object> EdgeStyle() {
+
 		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
 		style.put(mxConstants.STYLE_EDGE, mxEdgeStyle.SideToSide);
+		
+		return style;
+
 	}
 
 }
