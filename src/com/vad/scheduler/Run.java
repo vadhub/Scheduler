@@ -17,7 +17,7 @@ public class Run {
 	static JFrame frame = new JFrame("Scheduler");
 	static JGraf graf = new JGraf();
 
-	static JButton addObj = new JButton("Add");
+	static JButton addObj = new JButton("Add");	
 	static JButton delete = new JButton("Delete");
 	static JButton save = new JButton("Save");
 
@@ -28,6 +28,7 @@ public class Run {
 	static JMenuBar menuBar = new JMenuBar();
 	static JMenu menu = new JMenu("Window");
 	static JMenuItem mitem = new JMenuItem("Tools");
+	static JMenuItem mitemE = new JMenuItem("Chnage Style Edge");
 
 	public static void main(String[] args) {
 

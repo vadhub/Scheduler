@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -15,7 +16,11 @@ import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import com.mxgraph.util.mxConstants;
+import com.mxgraph.view.mxEdgeStyle;
+
 public class ActionList {
+	static JGraf graf = new JGraf();
 	public static void Action(JLabel close, JPanel panel) {
 
 		close.addMouseListener(new MouseAdapter() {
@@ -39,6 +44,18 @@ public class ActionList {
 		});
 
 	}
+
+	public void ChnageStyleEdge(JMenuItem item) {
+
+		 item.addActionListener(new ActionListener() {
+		
+		 @Override
+		 public void actionPerformed(ActionEvent e) {
+			 graf.EdgeStyle();
+		 }
+		 });
+	}
+
 	// button screenshot frame image
 	public static void ScreenShot(JButton btn, JFrame f) {
 
@@ -46,7 +63,7 @@ public class ActionList {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				BufferedImage img =	screenShot(f.getContentPane());
+				BufferedImage img = screenShot(f.getContentPane());
 				try {
 					// write the image as a PNG
 					ImageIO.write(img, "png", new File("screenshot.png"));
@@ -57,18 +74,15 @@ public class ActionList {
 		});
 
 	}
-	
-	//method for screenshots
+
+	// method for screenshots
 	private static BufferedImage screenShot(Component component) {
 
-		BufferedImage image = new BufferedImage(
-				component.getWidth(),
-				component.getHeight(), 
-				BufferedImage.TYPE_3BYTE_BGR				
-				);
-		
+		BufferedImage image = new BufferedImage(component.getWidth(),
+				component.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
+
 		component.paint(image.getGraphics());
-		
+
 		return image;
 	}
 
