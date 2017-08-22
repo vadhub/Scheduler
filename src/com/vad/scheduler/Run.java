@@ -31,16 +31,16 @@ public class Run {
 	static JMenuItem mitemE = new JMenuItem("Chnage Style Edge");
 
 	public static void main(String[] args) {
+		
+		ActionList actl = new ActionList();
 
 		panelx.setLayout(new BoxLayout(panelx, BoxLayout.X_AXIS));
 		panelMenu.setLayout(new BoxLayout(panelMenu, BoxLayout.X_AXIS));
 
 		mainPanel.setLayout(new BorderLayout());
 
-		ActionList.ActionObj(mitem, panelx);		
-		ActionList.ScreenShot(save, frame);
-		ActionList.ChnageStyleEdge(mitemE);
-		
+		actl.ActionObj(mitem, panelx);		
+		actl.ScreenShot(save, frame);	
 		
 		panelMenu.add(menuBar);
 
@@ -61,7 +61,7 @@ public class Run {
 
 		frame.add("North", mainPanel);
 
-		graf.graph(frame, addObj, delete);
+		graf.graph(frame, addObj, delete, mitemE);
 
 		frame.setSize(400, 400);
 		frame.setVisible(true);

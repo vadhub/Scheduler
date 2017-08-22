@@ -15,7 +15,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class ActionList {
-	public static void Action(JLabel close, JPanel panel) {
+	public void Action(JLabel close, JPanel panel) {
 
 		close.addMouseListener(new MouseAdapter() {
 			@Override
@@ -25,7 +25,7 @@ public class ActionList {
 		});
 	}
 
-	public static void ActionObj(JMenuItem item, JPanel panel) {
+	public void ActionObj(JMenuItem item, JPanel panel) {
 
 		item.addActionListener(new ActionListener() {
 
@@ -39,20 +39,10 @@ public class ActionList {
 
 	}
 
-	static public void ChnageStyleEdge(JMenuItem item) {
-
-		item.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JGraf.c = true;
-				System.out.println("j");
-			}
-		});
-	}
+	
 
 	// button screenshot frame image
-	public static void ScreenShot(JButton btn, JFrame f) {
+	public void ScreenShot(JButton btn, JFrame f) {
 
 		btn.addActionListener(new ActionListener() {
 

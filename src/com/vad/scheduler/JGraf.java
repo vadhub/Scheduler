@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
@@ -18,17 +19,21 @@ public class JGraf {
 	static Object v;
 
 	static mxGraph graph = new mxGraph();
-	static boolean c = false;
 
-	public Component graph(JFrame frame, JButton btn, JButton btn2) {
+	public Component graph(JFrame frame, JButton btn, JButton btn2,
+			JMenuItem item) {
 
 		Object parent = graph.getDefaultParent();
-		graph.getModel().beginUpdate();
-		if(c==true){		
-		JGraf.EdgeStyle();
-		}else{
-			System.out.println("It's ok");
-		}
+		graph.getModel().beginUpdate();	
+
+		item.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JGraf.EdgeStyle();
+				System.out.println("j");
+			}
+		});
 
 		btn.addActionListener(new ActionListener() {
 			@Override
@@ -59,10 +64,8 @@ public class JGraf {
 	}
 
 	static public Map<String, Object> EdgeStyle() {
-
 		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
 		style.put(mxConstants.STYLE_EDGE, mxEdgeStyle.SideToSide);
-		
 		return style;
 
 	}
