@@ -28,7 +28,9 @@ public class Run {
 	static JMenuBar menuBar = new JMenuBar();
 	static JMenu menu = new JMenu("Window");
 	static JMenuItem mitem = new JMenuItem("Tools");
-	static JMenuItem mitemE = new JMenuItem("Chnage Style Edge");
+	static JMenu mitemE = new JMenu("Chnage Style Edge");
+	static JMenuItem mitemSE = new JMenuItem("Sharp corners");
+	static JMenuItem mitemSED = new JMenuItem("Default");
 
 	public static void main(String[] args) {
 		
@@ -47,6 +49,9 @@ public class Run {
 		menuBar.add(menu);
 		menu.add(mitem);
 		menu.add(mitemE);
+		
+		mitemE.add(mitemSE);
+		mitemE.add(mitemSED);
 
 		panelx.add(addObj);
 		panelx.add(delete);
@@ -61,7 +66,7 @@ public class Run {
 
 		frame.add("North", mainPanel);
 
-		graf.graph(frame, addObj, delete, mitemE);
+		graf.graph(frame, addObj, delete, mitemSE, mitemSED);
 
 		frame.setSize(400, 400);
 		frame.setVisible(true);

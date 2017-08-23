@@ -21,7 +21,7 @@ public class JGraf {
 	static mxGraph graph = new mxGraph();
 
 	public Component graph(JFrame frame, JButton btn, JButton btn2,
-			JMenuItem item) {
+			JMenuItem item, JMenuItem item2) {
 
 		Object parent = graph.getDefaultParent();
 		graph.getModel().beginUpdate();	
@@ -32,6 +32,16 @@ public class JGraf {
 			public void actionPerformed(ActionEvent e) {
 				JGraf.EdgeStyle();
 				System.out.println("j");
+			}
+		});
+		
+		item2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
+				graph.getStylesheet().setDefaultEdgeStyle(style);
+				System.out.println("t");
 			}
 		});
 
@@ -66,6 +76,13 @@ public class JGraf {
 	static public Map<String, Object> EdgeStyle() {
 		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
 		style.put(mxConstants.STYLE_EDGE, mxEdgeStyle.SideToSide);
+		return style;
+
+	}
+	
+	static public Map<String, Object> EdgeDefStyle() {
+		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
+		graph.getStylesheet().setDefaultEdgeStyle(style);
 		return style;
 
 	}
