@@ -39,8 +39,7 @@ public class JGraf {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
-				graph.getStylesheet().setDefaultEdgeStyle(style);
+				
 				System.out.println("t");
 			}
 		});
@@ -80,11 +79,6 @@ public class JGraf {
 
 	}
 	
-	static public Map<String, Object> EdgeDefStyle() {
-		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
-		graph.getStylesheet().setDefaultEdgeStyle(style);
-		return style;
-
-	}
+	
 
 }
