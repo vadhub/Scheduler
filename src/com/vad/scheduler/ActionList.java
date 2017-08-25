@@ -38,9 +38,6 @@ public class ActionList {
 		});
 
 	}
-
-	
-
 	// button screenshot frame image
 	public void ScreenShot(JButton btn, JFrame f) {
 

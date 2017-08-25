@@ -24,7 +24,7 @@ public class JGraf {
 			JMenuItem item, JMenuItem item2) {
 
 		Object parent = graph.getDefaultParent();
-		graph.getModel().beginUpdate();	
+		graph.getModel().beginUpdate();
 
 		item.addActionListener(new ActionListener() {
 
@@ -34,12 +34,12 @@ public class JGraf {
 				System.out.println("j");
 			}
 		});
-		
+
 		item2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				System.out.println("t");
 			}
 		});
@@ -75,10 +75,10 @@ public class JGraf {
 	static public Map<String, Object> EdgeStyle() {
 		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
 		style.put(mxConstants.STYLE_EDGE, mxEdgeStyle.SideToSide);
+		style.put(mxConstants.SHAPE_LINE, mxEdgeStyle.SideToSide);
+		
 		return style;
 
 	}
-	
-	
 
 }
