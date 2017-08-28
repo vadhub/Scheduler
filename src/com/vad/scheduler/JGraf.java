@@ -21,7 +21,7 @@ public class JGraf {
 	static mxGraph graph = new mxGraph();
 
 	public Component graph(JFrame frame, JButton btn, JButton btn2,
-			JMenuItem item, JMenuItem item2) {
+			JMenuItem item) {
 
 		Object parent = graph.getDefaultParent();
 		graph.getModel().beginUpdate();
@@ -30,19 +30,9 @@ public class JGraf {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JGraf.EdgeStyle();
-				System.out.println("j");
+				JGraf.EdgeStyle();				
 			}
-		});
-
-		item2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				System.out.println("t");
-			}
-		});
+		});		
 
 		btn.addActionListener(new ActionListener() {
 			@Override
