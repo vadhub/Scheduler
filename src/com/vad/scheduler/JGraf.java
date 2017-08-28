@@ -1,5 +1,6 @@
 package com.vad.scheduler;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,9 +38,7 @@ public class JGraf {
 		btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80,
-						30);
-
+				v = graph.insertVertex(parent, null, "DoubleClic", 80, 80, 80, 30,"fillColor=#ABCDE;");	
 			}
 		});
 
@@ -50,12 +49,13 @@ public class JGraf {
 			}
 		});
 
-		graph.insertEdge(parent, null, "", v, parent);
-
-		graph.getModel().endUpdate();
-
+		graph.insertEdge(parent, null, "", v, parent);	
+		
+		graph.getModel().endUpdate();	
+		
 		mxGraphComponent graphComponent = new mxGraphComponent(graph);
-
+		
+		graphComponent.getViewport().setBackground(Color.GRAY);
 		ImageIcon icon = new ImageIcon("img/a1.jpg");
 		graphComponent.setBackgroundImage(icon);
 
