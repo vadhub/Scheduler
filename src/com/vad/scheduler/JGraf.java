@@ -75,7 +75,7 @@ public class JGraf {
 	static public Map<String, Object> EdgeStyle() {
 		Map<String, Object> style = graph.getStylesheet().getDefaultEdgeStyle();
 		style.put(mxConstants.STYLE_EDGE, mxEdgeStyle.SideToSide);
-		style.put(mxConstants.SHAPE_LINE, mxEdgeStyle.SideToSide);
+		style.put(mxConstants.SHAPE_LINE, mxEdgeStyle.SideToSide);	
 		
 		return style;
 
